@@ -1,7 +1,7 @@
 ---
 layout: section
 title: Tech
-description: Code, systems, and digital innovation. Exploring the frontier of technology.
+description: Code, systems and future.
 section: tech
 permalink: /tech/
 ---

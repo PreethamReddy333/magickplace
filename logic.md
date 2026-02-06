@@ -1,7 +1,7 @@
 ---
 layout: section
 title: Logic
-description: Reasoning, philosophy, and mental models. Sharpening the mind's edge.
+description: Reasoning, philosophy, and mental models.
 section: logic
 permalink: /logic/
 ---
