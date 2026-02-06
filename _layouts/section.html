@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<section class="section-hero section-hero--{{ page.section }}">
+    <div class="container">
+        <h1 class="section-hero__title">{{ page.title }}</h1>
+        <p class="section-hero__description">{{ page.description }}</p>
+    </div>
+</section>
+
+<section class="section-posts">
+    <div class="container">
+        <div class="posts-grid">
+            {% assign section_posts = site[page.section] | sort: 'date' | reverse %}
+            {% for post in section_posts %}
+            {% include post-card.html post=post %}
+            {% endfor %}
+
+            {% if section_posts.size == 0 %}
+            <p class="no-posts">No posts yet. Stay tuned!</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
