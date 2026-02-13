@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<article class="post post--{{ page.section }}">
+    <header class="post__header">
+        <div class="container container--narrow">
+            <a href="{{ '/' | append: page.section | append: '/' | relative_url }}" class="post__back">
+                ← Back to {{ page.section | capitalize }}
+            </a>
+            <h1 class="post__title">{{ page.title }}</h1>
+            <div class="post__meta">
+                <span class="post__author">T Preetham Reddy</span>
+                <span class="post__meta-sep">·</span>
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.reading_time %}
+                <span class="post__reading-time">• {{ page.reading_time }} min read</span>
+                {% endif %}
+            </div>
+            {% if page.subtitle %}
+            <p class="post__subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="post__content">
+        <div class="container container--narrow">
+            {{ content }}
+        </div>
+    </div>
+
+    <footer class="post__footer">
+        <div class="container container--narrow">
+            {% if page.tags.size > 0 %}
+            <div class="post__tags">
+                {% for tag in page.tags %}
+                <span class="tag">#{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </footer>
+</article>

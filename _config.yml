@@ -1,0 +1,65 @@
+# Site Settings
+title: Magick Place
+tagline: Tech • Logic • Magick
+description: >-
+  Exploring the intersections of technology, logical thinking, and the mystical arts.
+  A digital grimoire for the curious mind.
+url: "https://magickplace.com"
+baseurl: ""
+author: Magick Place
+
+# Build Settings
+markdown: kramdown
+permalink: /:categories/:title/
+
+# Sass configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Collections for sections
+collections:
+  tech:
+    output: true
+    permalink: /tech/:title/
+  logic:
+    output: true
+    permalink: /logic/:title/
+  magick:
+    output: true
+    permalink: /magick/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "tech"
+    values:
+      layout: "post"
+      section: "tech"
+  - scope:
+      path: ""
+      type: "logic"
+    values:
+      layout: "post"
+      section: "logic"
+  - scope:
+      path: ""
+      type: "magick"
+    values:
+      layout: "post"
+      section: "magick"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor

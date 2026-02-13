@@ -1,0 +1,22 @@
+<nav class="nav">
+    <div class="container">
+        <a href="{{ '/' | relative_url }}" class="nav__logo">
+            <span class="nav__logo-icon">✦</span>
+            <span class="nav__logo-text">Magick Place</span>
+            <span class="nav__logo-author">T Preetham Reddy</span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav__links">
+            <li><a href="{{ '/tech/' | relative_url }}" class="nav__link nav__link--tech">Tech</a></li>
+            <li><a href="{{ '/logic/' | relative_url }}" class="nav__link nav__link--logic">Logic</a></li>
+            <li><a href="{{ '/magick/' | relative_url }}" class="nav__link nav__link--magick">Magick</a></li>
+            <li><a href="{{ '/about/' | relative_url }}" class="nav__link nav__link--about">About</a></li>
+        </ul>
+    </div>
+</nav>

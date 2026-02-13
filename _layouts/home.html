@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<section class="home">
+    <div class="container">
+
+        <!-- Section Navigation Tabs -->
+        <nav class="section-tabs">
+            <a href="{{ '/tech/' | relative_url }}" class="section-tab section-tab--tech">
+                <span class="section-tab__icon">/</span>
+                Tech
+            </a>
+            <a href="{{ '/logic/' | relative_url }}" class="section-tab section-tab--logic">
+                <span class="section-tab__icon">◇</span>
+                Logic
+            </a>
+            <a href="{{ '/magick/' | relative_url }}" class="section-tab section-tab--magick">
+                <span class="section-tab__icon">✦</span>
+                Magick
+            </a>
+        </nav>
+
+        <!-- All Posts -->
+        <div class="posts-grid">
+            {% assign all_posts = site.tech | concat: site.logic | concat: site.magick | sort: 'date' | reverse %}
+            {% for post in all_posts %}
+            {% include post-card.html post=post %}
+            {% endfor %}
+
+            {% if all_posts.size == 0 %}
+            <p class="no-posts">No posts yet. Start writing!</p>
+            {% endif %}
+        </div>
+
+    </div>
+</section>

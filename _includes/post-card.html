@@ -1,0 +1,18 @@
+<article class="post-card post-card--{{ include.post.section }}">
+    <a href="{{ include.post.url | relative_url }}" class="post-card__link">
+        <div class="post-card__content">
+            <span class="post-card__section">{{ include.post.section | capitalize }}</span>
+            <h3 class="post-card__title">{{ include.post.title }}</h3>
+            {% if include.post.excerpt %}
+            <p class="post-card__excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
+            {% endif %}
+            <div class="post-card__meta">
+                <span>T Preetham Reddy</span>
+                <span class="post-card__meta-sep">·</span>
+                <time datetime="{{ include.post.date | date_to_xmlschema }}">
+                    {{ include.post.date | date: "%b %d, %Y" }}
+                </time>
+            </div>
+        </div>
+    </a>
+</article>
